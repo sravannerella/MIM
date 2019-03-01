@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+*{
+	font-family: 'Roboto', sans-serif;
+}
+
+body{
+	margin: 0px;
+	background: black;
+}
+
+.title{
+	font-weight: bold;
+	text-align: center;
+	max-width: 178px;
+	transform: rotate(-8deg);
+	margin-top: 28px;
+}
+
+.title span{
+	height: 2px;
+	width: 100vw;
+	display: flex;
+	z-index: -1;
+	margin-top: 5px;
+}
+
+
+.title .text{
+	position: absolute;
+	top: -17px;
+	padding: 4px;
+	font-size: 50px;
+	margin-left: 50px;
+	color: white;
+	background: black;
+	animation: 0.5s moveIn;
+}
+
+.title .text > .subtext{
+	font-size: 18px;
+	position: absolute;
+	top: 50px;
+	text-align: center;
+	width: 100%;
+}
+
+.bg-red{
+	background: #d32f2f;
+}
+
+.bg-blue{
+	background: #1565c0;
+}
+
+.bg-green{
+	background: #43a047;
+}
+
+.bg-yellow{
+	background: #fb8c00;
+}
+
+.bg-fuchsia{
+	background: #FF00FF;
+}
+
+.mainContent{
+	text-align: center;
+}
+
+.content{
+	display: flex;
+	justify-content: center;
+	margin-top: 100px;
+}
+
+.mobile{
+	opacity: 0;
+	width: 125px;
+	height: 225px;
+	background: black;
+	margin-left: 10px;
+	border-radius: 7px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 8px 16px rgba(255,255,255,.12), 0 3px 6px rgba(255,255,255,.08);
+}
+
+.content > .mobile{
+	animation: 2s bumpRight;
+	animation-delay: 1s;
+	animation-fill-mode: forwards;
+}
+
+.content .mobile:nth-child(n+2){
+	animation: 2s bumpLeft;
+	animation-delay: 1s;
+	animation-fill-mode: forwards;
+}
+
+
+.mobile>.screen{
+	width: calc(100% - 4px);
+	height: calc(100% - 5px);
+	background: #d32f2f;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+}
+
+.mobile>.screen2{
+	width: calc(100% - 4px);
+	height: calc(100% - 10px);
+	background: #d32f2f;
+	border-radius: 5px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.screen > .notch{
+	background: black;
+	width: 70px;
+	height: 10px;
+	border-radius: 7px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	margin-top: -2px;
+}
+
+.screen2 > .notch2{
+	background: black;
+	width: 25px;
+	height: 10px;
+	border-radius: 7px;
+	margin-top: 1px;
+	margin-right: 1px;
+}
+
+.heading{
+	opacity: 0;
+	color: white;
+	max-width: 350px;
+	margin: 0 auto;
+	animation: 2s fadeIn;
+	animation-delay: 2s;
+	animation-fill-mode: forwards;
+}
+
+.heading > p{
+	font-size: 22px;
+	color: #424242;
+}
+
+.buttons{
+	opacity: 0;
+	animation: 2s fadeIn;
+	animation-delay: 2s;
+	animation-fill-mode: forwards;
+}
+
+.buttons a{
+	border: 1px solid #d32f2f;
+	padding: 10px;
+	width: 120px;
+	text-decoration: none;
+	color: #d32f2f;
+	margin: 0 10px;
+	border-radius: 10px;
+	transition: all 0.1s ease-in-out;
+}
+
+.buttons a:hover{
+	background: #d32f2f;
+	color: white;
+}
+
+.mt-2{
+	margin-top: 2rem;
+}
+
+.features{
+	color: white;
+	max-width: 768px;
+	margin: 4rem auto;
+	text-align: center;
+}
+
+.boxes{
+	display: flex;
+}
+
+.boxes .box{
+	width: calc(100%/3);
+	text-align: center;
+	padding: 10px;
+	margin: 5px;
+	/*border: 1px solid #d32f2f;*/
+}
+
+.boxes .box > h2{
+	color: #d32f2f;
+}
+
+footer{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	color: #424242;
+}
+
+footer p{
+	margin: 10px 0;
+	font-style: 18px;
+}
+
+footer a{
+	margin: 10px;
+	text-decoration: none;
+	color: #fff;
+}
+
+footer a:hover{
+	color: #d32f2f;
+}
+
+
+@keyframes moveIn{
+	0%{
+		margin-left: -500px;
+		font-style: italic;
+	}
+	100%{
+		margin-left: 50px;
+		font-style: normal;
+	}
+}
+
+@keyframes bumpLeft{
+	0%{
+		display: none;
+		opacity: 0;
+		transform: translate(150px,0);
+	}
+
+	100%{
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+@keyframes bumpRight{
+	0%{
+		display: none;
+		opacity: 0;
+		transform: translate(-150px,0);
+	}
+
+	100%{
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+@keyframes fadeIn{
+	0%{
+		opacity: 0;
+	}
+
+	100%{
+		opacity: 1;
+	}
+}
