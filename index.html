@@ -72,12 +72,54 @@
 		</div>
 	</div>
 
+	<div id="join" class="join">
+
+		<h3 class="uppercase">Get the code from your friends and enter to join</h3>
+
+		<div class="inputs">
+			<input type="text" onkeyup="check()" maxlength="5" class="box">
+		</div>
+
+		<div class="btns">
+			<div class="bg">
+				<span class="bg-red"></span>
+				<span class="bg-blue"></span>
+			</div>
+
+			<a href="#" id="start" class="uppercase">Start</a>	
+		</div>
+	</div>
+
 
 	<footer>
 		<p>MERGE - An experiment project</p>
-		<a href="#">JOIN A ROOM</a>
-		<a href="#">CREATE A ROOM</a>
 	</footer>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		let attr = $("[repeat]");
+		console.log("ATTR:", attr);
+
+		for(let element of attr){
+			let item = $(element);
+			let count = $(element).attr('repeat');
+			let outer = element.outerHTML;
+			outer = $(outer).removeAttr('repeat')[0].outerHTML;
+			for(let i=0;i<count-1;i++) {
+				$(element).parent().append(outer);
+			}
+		}
+
+		function check(){
+			console.log("CHECKIN")
+
+			if($("input").val().length === 5){
+				$("input").blur();
+				$("#start").addClass('active');
+			} else {
+				$("#start").removeClass('active');
+			}
+		}
+	</script>
 </body>
 </html>
